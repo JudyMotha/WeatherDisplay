@@ -55,7 +55,7 @@ var getCityWeathertoday = function(city) {
     })
 }
 
-// Displaying current weather data ; moment L formats ;//Date Icon Temp Humidity WindSpeed UV
+// Displaying current weather data ; moment L formats; Date Icon Temp Humidity WindSpeed UV
 var Todayweather = function(city, citisearchDisp) {
     
     todayscity.textContent = '';
