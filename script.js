@@ -94,8 +94,7 @@ var Todayweather = function(city, citisearchDisp) {
     newlyaddedCity.textContent = citisearchDisp;
     newlyaddedCity.addEventListener("click", previousdisplayedcityclick);
     citiesdropdown.appendChild(newlyaddedCity);
-    
-     
+      
        var lon = city.coord.lon; 
        var lat = city.coord.lat; 
    
@@ -104,7 +103,7 @@ var Todayweather = function(city, citisearchDisp) {
     
 };
 
-// UV index API 
+// UV index API -Working on ot
 //Refer Bootcamp class week 6 exercises Ex21 Ex22 onwards
 var CityUV = function(lon, lat) {
       let uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=imperial&exclude=minutely,hourly&appid=" + APIkey;
@@ -153,7 +152,7 @@ var fivedayforecast = function(city) {
             alert("Error:" + response.statusText);
         }
     })
-    // for network connectivity issues -I was able to test thsi feature
+    // for network connectivity issues
     .catch(function(error) {
         alert("Unable to connect to Open Weather");
     })
@@ -163,9 +162,7 @@ var fivedayforecast = function(city) {
 //Example moment().format('L');    // 06/07/2021
 //Example moment().format('l');    //   6/7/2021   
 var displayfivedayForecast = function (list) { 
-    //console.log(list);
-
-        for (var i = 0; i <= 4; i++) {
+            for (var i = 0; i <= 4; i++) {
 
         //date 5 consecutive
         var displayDay1 = document.querySelector("#day-1");
