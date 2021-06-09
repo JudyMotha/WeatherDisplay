@@ -29,6 +29,9 @@ if (city) {
 
 };
 
+// Only and only button click 
+inputuserform.addEventListener("submit", userinputclick);
+
 // previous searched city
 var previousdisplayedcityclick = function (event) {
 
@@ -219,5 +222,4 @@ var displayfivedayForecast = function (list) {
         }
 }; 
 
-// Only and only button click 
-inputuserform.addEventListener("submit", userinputclick);
+
