@@ -8,6 +8,11 @@ var todayscity = document.querySelector("#today-city-container");
 var citySearchTerm = document.querySelector("#city-search-term");
 var citiesdropdown = document.getElementById("search-input-container");
 var currentUV = document.querySelector("#uv-input")
+var displayCurrentDate = document.querySelector("#city-current-date");
+var displaycurrentIcon = document.querySelector("#city-current-icon");
+var displaycurrentTemp = document.querySelector("#temp-today");
+var displaycurrentHumidity = document.querySelector("#humidity-today");
+var displaycurrentWind = document.querySelector("#wind-today");
 
 
 // search city for input and move in local storage
@@ -57,27 +62,21 @@ var getCityWeathertoday = function(city) {
 
 // Displaying current weather data ; moment L formats; Date Icon Temp Humidity WindSpeed UV
 var Todayweather = function(city, citisearchDisp) {
-    
     todayscity.textContent = '';
     citySearchTerm.textContent = citisearchDisp;
-
-    var displayCurrentDate = document.querySelector("#city-current-date");
+   
     var currentDate = moment();
     displayCurrentDate.textContent = currentDate.format("(L)");
-    
-    var displaycurrentIcon = document.querySelector("#city-current-icon");
+       
     var currentIcon = "https://openweathermap.org/img/wn/" + city.weather[0].icon + ".png"
     displaycurrentIcon.setAttribute ("src", currentIcon);
-    
-    var displaycurrentTemp = document.querySelector("#temp-today");
+       
     var todayTemp = Math.round(city.main.temp) + " °F";
     displaycurrentTemp.textContent = todayTemp; 
-    
-    var displaycurrentHumidity = document.querySelector("#humidity-today");
+       
     var todayHumidity = city.main.humidity + "%";
     displaycurrentHumidity.textContent = todayHumidity; 
-    
-    var displaycurrentWind = document.querySelector("#wind-today");
+        
     var todayWindspeed = city.wind.speed + " MPH";
     displaycurrentWind.textContent = todayWindspeed;
    
