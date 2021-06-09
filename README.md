@@ -6,3 +6,7 @@ The application does the following-
 * The city names are stored on local storage
 * The UV part is still under construction with one call API
 * Future work with ONe call Api for the entir application
+
+
+
+<img src="./WeatherDash.PNG">
