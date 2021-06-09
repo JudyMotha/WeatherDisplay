@@ -9,7 +9,7 @@ var citySearchTerm = document.querySelector("#city-search-term");
 var citiesdropdown = document.getElementById("search-input-container");
 var currentUV = document.querySelector("#uv-input")
 
-// Only and only button click 
+// Only and only button click for city input
 inputuserform.addEventListener("submit", userinputclick);
 
 // search city for input and move in local storage
