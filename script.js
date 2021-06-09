@@ -7,12 +7,13 @@ var CitynameEntry = document.querySelector("#city-name");
 var todayscity = document.querySelector("#today-city-container");
 var citySearchTerm = document.querySelector("#city-search-term");
 var citiesdropdown = document.getElementById("search-input-container");
-var currentUV = document.querySelector("#uv-input")
+//Todays forecast Assignments
 var displayCurrentDate = document.querySelector("#city-current-date");
 var displaycurrentIcon = document.querySelector("#city-current-icon");
 var displaycurrentTemp = document.querySelector("#temp-today");
 var displaycurrentHumidity = document.querySelector("#humidity-today");
 var displaycurrentWind = document.querySelector("#wind-today");
+var currentUV = document.querySelector("#uv-input")
 
 // search city for input and move in local storage
 var userinputclick = function(event) {
