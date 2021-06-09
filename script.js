@@ -14,7 +14,6 @@ var displaycurrentTemp = document.querySelector("#temp-today");
 var displaycurrentHumidity = document.querySelector("#humidity-today");
 var displaycurrentWind = document.querySelector("#wind-today");
 
-
 // search city for input and move in local storage
 var userinputclick = function(event) {
     event.preventDefault();
@@ -29,9 +28,9 @@ if (city) {
         alert("Key in a valid city name! ");
     }
 };
+
 // Only and only button click for city input
 inputuserform.addEventListener("submit", userinputclick);
-
 
 // previous searched city
 var previousdisplayedcityclick = function (event) {
