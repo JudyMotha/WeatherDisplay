@@ -2,8 +2,6 @@
 //  Assignments
 var APIkey = "6ca38b593072c5ff245976d803e5f35b";
 var cityNameList = [];
-
-// Assignments  DOM
 var inputuserform = document.querySelector("#user-form");
 var CitynameEntry = document.querySelector("#city-name");
 var todayscity = document.querySelector("#today-city-container");
@@ -11,11 +9,14 @@ var citySearchTerm = document.querySelector("#city-search-term");
 var citiesdropdown = document.getElementById("search-input-container");
 var currentUV = document.querySelector("#uv-input")
 
+// Only and only button click 
+inputuserform.addEventListener("submit", userinputclick);
+
 // search city for input and move in local storage
 var userinputclick = function(event) {
     event.preventDefault();
-
 var city = CitynameEntry.value.trim();
+    
 //Get cityweather going to the GCWT fn with API,5 day and so forth
 if (city) {
         getCityWeathertoday(city);
@@ -26,22 +27,17 @@ if (city) {
      } else {
         alert("Key in a valid city name! ");
     }
-
 };
 
-// Only and only button click 
-inputuserform.addEventListener("submit", userinputclick);
 
 // previous searched city
 var previousdisplayedcityclick = function (event) {
-
     var clickCity = event.currentTarget.textContent;
     getCityWeathertoday(clickCity);
     fivedayforecast(clickCity);
-
 };
 
-//API Call current weather data   By city name ;For temperature in Fahrenheit use units=imperial
+//API Call current weather data   By city name ;For temperature in F use units=imperial
 //The below syntax concepts of response.ok & catch  is from Bootcamp Week6 Server Side APIs Ins and Stu Exercises-Day3
 var getCityWeathertoday = function(city) {
     var URLfortoday = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIkey;
@@ -59,11 +55,9 @@ var getCityWeathertoday = function(city) {
     .catch(function(error) {
         alert("Unable to connect to Open ");
     })
-
 }
 
-// Displaying current weather data ; moment L formats
-//Date Icon Temp Humidity WindSpeed UV
+// Displaying current weather data ; moment L formats ;//Date Icon Temp Humidity WindSpeed UV
 var Todayweather = function(city, citisearchDisp) {
     
     todayscity.textContent = '';
@@ -98,9 +92,7 @@ var Todayweather = function(city, citisearchDisp) {
        var lon = city.coord.lon; 
        var lat = city.coord.lat; 
    
-       CityUV(lon, lat);
-  
-    
+       CityUV(lon, lat);   
 };
 
 // UV index API -Working on ot
@@ -135,7 +127,6 @@ var dispUv = function(data) {
             currentUV.innerHTML=" " + uv + " ";
         }
 };
-
 
 // 5 day forecast API 
 ////Refer Bootcamp class week 6 exercises Ex21 Ex22 onwards-Day3 videos for the below syntax
