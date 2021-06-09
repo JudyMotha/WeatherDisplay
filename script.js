@@ -15,9 +15,7 @@ inputuserform.addEventListener("submit", userinputclick);
 // search city for input and move in local storage
 var userinputclick = function(event) {
     event.preventDefault();
-var city = CitynameEntry.value.trim();
-    
-//Get cityweather going to the GCWT fn with API,5 day and so forth
+var city = CitynameEntry.value.trim();  
 if (city) {
         getCityWeathertoday(city);
         fivedayforecast(city);
