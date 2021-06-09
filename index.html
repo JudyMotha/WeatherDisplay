@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Weather Dashboard</title>
+</head>
+
+<body>
+<!--Header board-->    
+    <div class="header-container for Weather Dashboard head">
+      <div class="row">     <h1>Weather Dashboard</h1>     </div>
+    </div>
+
+
+<div class="weather container">
+
+<!--Left side panel -User enters  input ie. city name -Refer Bootcamp Week6Ex 21 22 onwards -->
+    <div class="row">
+        <div class="col-3">
+            <div class="card bg-light">   <h3 class="search">Search by city name :</h3>
+            <form id="user-form" >
+                <label class="form-label" for="city"></label>
+                <input name="getcity" size="23" id="city-name"  class="form-input" />
+                <button type="submit" class="btn btn-md ">Get city</button>
+            </form>
+            <ul class="list-group" id="search-input-container"></ul>
+        </div>
+    </div>
+
+<!-- Todays city forecast panel -->
+<!--Follow class /id  naming conventions as per Open weatherAPI doc  -->
+        <div class="col-9">
+            <div class="card bg-white">
+                <div class="current-weather">
+                <h2 class="subtitle"><span id="city-search-term">Today's Forecast</span>
+                    <span id="city-current-date"></span>
+                    <img id="city-current-icon"></img>
+                </h2>
+                <div id="today-city-container" class="list-group"></div>
+                </div>
+
+                <div class="weather-input">
+                <p class="temp">Temperature: 
+                    <span id="temp-today"></span></p>
+                <p class="humidity">Humidity:
+                    <span id="humidity-today"></span></p>
+                <p class="wind">Wind Speed:
+                    <span id="wind-today"></span></p>
+                    <p class="uv">UV Index:
+                        <span id="uv-input"></span></p>
+                 </div>
+            </div>
+        
+<!-- 5-Day Forecast pnael -->
+<!--Follow class/id  naming convention as per open weather API --Map it to  api documentation and check script.js variables too -->
+        <div class="row">
+            <h3 class="forecastheading">5-Day Forecast:</h3>
+        </div>
+
+        <div class="row" id="individualforecastcards">
+            <div class="card col-2"  id="day1">
+                <p class="card-1" id="day-1">Date</p>
+                <img id="city-icon-1"></img>
+                <p class="card-1" id="temp-0">Temperature:</p>
+                <p class="card-1" id="humidity-0">Humidity:</p>
+            </div>
+      
+            <div class="card col-2" id="day2">
+                <p class="card-2" id="day-2">Date</p>
+                <img id="city-icon-2"></img>
+                <p class="card-2" id="temp-1">Temperature:</p>
+                <p class="card-2" id="humidity-1">Humidity:</p>
+            </div>
+     
+            <div class="card col-2" id="day3">
+                <p class="card-3" id="day-3">Date</p>
+                <img id="city-icon-3"></img>
+                <p class="card-3" id="temp-2">Temperature:</p>
+                <p class="card=3" id="humidity-2">Humidity:</p>
+            </div>
+
+            <div class="card col-2 " id="day4">
+                <p class="card-4" id="day-4">Date</p>
+                <img id="city-icon-4"></img>
+                <p class="card-4" id="temp-3">Temperature:</p>
+                <p class="card-4" id="humidity-3">Humidity:</p>
+            </div>
+
+            <div class="card col-2 " id="day5">
+                <p class="card-5" id="day-5">Date</p>
+                <img id="city-icon-5"></img>
+                <p class="card-5" id="temp-4">Temperature:</p>
+                <p class="card-5" id="humidity-4">Humidity:</p>
+            </div>
+        </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
