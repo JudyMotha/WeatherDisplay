@@ -9,4 +9,4 @@ The application does the following-
 
 
 
-<img src="./WeatherDash.PNG">
+<img src="./Weatherdash.PNG">
