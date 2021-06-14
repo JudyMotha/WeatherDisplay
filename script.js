@@ -15,6 +15,9 @@ var displaycurrentHumidity = document.querySelector("#humidity-today");
 var displaycurrentWind = document.querySelector("#wind-today");
 var currentUV = document.querySelector("#uv-input")
 
+// Only and only button click for city input
+inputuserform.addEventListener("submit", userinputclick);
+
 
 //API Call current weather data   By city name ;For temperature in F use units=imperial
 //The below syntax concepts of response.ok & catch  is from Bootcamp Week6 Server Side APIs Ins and Stu Exercises-Day3
@@ -62,17 +65,14 @@ var Todayweather = function(city, citisearchDisp) {
     newlyaddedCity.addEventListener("click", previousdisplayedcityclick);
     citiesdropdown.appendChild(newlyaddedCity);
       
-       var lon = city.coord.lon; 
-       var lat = city.coord.lat; 
-   
-       CityUV(lon, lat);   
+      
 };
 
 // UV index API -Working on ot
 //Refer Bootcamp class week 6 exercises Ex21 Ex22 onwards
 
       //let uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=imperial&exclude=minutely,hourly&appid=" + APIkey;
-    '//fetch(uvUrl).then(function(response) {
+   //fetch(uvUrl).then(function(response) {
        
 
 // display UV
@@ -176,8 +176,7 @@ if (city) {
     }
 };
 
-// Only and only button click for city input
-inputuserform.addEventListener("submit", userinputclick);
+
 
 // previous searched city
 var previousdisplayedcityclick = function (event) {
