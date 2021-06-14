@@ -70,36 +70,13 @@ var Todayweather = function(city, citisearchDisp) {
 
 // UV index API -Working on ot
 //Refer Bootcamp class week 6 exercises Ex21 Ex22 onwards
-var CityUV = function(lon, lat) {
-      let uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=imperial&exclude=minutely,hourly&appid=" + APIkey;
-    fetch(uvUrl).then(function(response) {
-        if (response.ok) {
-            response.json().then(function(lon, lat) {
-                dispUv(lon, lat);
-            });
-       } else {
-            alert("Error:" + response.statusText);
-        }
-       })
-                .catch(function(error) {
-            alert("Unable to connect to Open App");
-    })
-};
+
+      //let uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&units=imperial&exclude=minutely,hourly&appid=" + APIkey;
+    '//fetch(uvUrl).then(function(response) {
+       
 
 // display UV
-var dispUv = function(data) {
-    var uv = data.value;
-        if (uv >= 6) {
-            currentUV.classList="danger"
-            currentUV.innerHTML=" " + uv + " ";
-        } else if (uv > 3 ) {
-            currentUV.classList="warning"
-           currentUV.innerHTML=" " + uv + " ";
-        } else {
-            currentUV.classList="success"
-            currentUV.innerHTML=" " + uv + " ";
-        }
-};
+
 
 // 5 day forecast API 
 ////Refer Bootcamp class week 6 exercises Ex21 Ex22 onwards-Day3 videos for the below syntax
