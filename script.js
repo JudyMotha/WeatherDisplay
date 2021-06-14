@@ -15,30 +15,6 @@ var displaycurrentHumidity = document.querySelector("#humidity-today");
 var displaycurrentWind = document.querySelector("#wind-today");
 var currentUV = document.querySelector("#uv-input")
 
-// search city for input and move in local storage
-var userinputclick = function(event) {
-    event.preventDefault();
-var city = CitynameEntry.value.trim();  
-if (city) {
-        getCityWeathertoday(city);
-        fivedayforecast(city);
-        cityNameList.push(city);
-        localStorage.setItem("city", JSON.stringify(cityNameList));
-        CitynameEntry.value = "";
-     } else {
-        alert("Key in a valid city name! ");
-    }
-};
-
-// Only and only button click for city input
-inputuserform.addEventListener("submit", userinputclick);
-
-// previous searched city
-var previousdisplayedcityclick = function (event) {
-    var clickCity = event.currentTarget.textContent;
-    getCityWeathertoday(clickCity);
-    fivedayforecast(clickCity);
-};
 
 //API Call current weather data   By city name ;For temperature in F use units=imperial
 //The below syntax concepts of response.ok & catch  is from Bootcamp Week6 Server Side APIs Ins and Stu Exercises-Day3
@@ -208,3 +184,27 @@ var displayfivedayForecast = function (list) {
 }; 
 
 
+// search city for input and move in local storage
+var userinputclick = function(event) {
+    event.preventDefault();
+var city = CitynameEntry.value.trim();  
+if (city) {
+        getCityWeathertoday(city);
+        fivedayforecast(city);
+        cityNameList.push(city);
+        localStorage.setItem("city", JSON.stringify(cityNameList));
+        CitynameEntry.value = "";
+     } else {
+        alert("Key in a valid city name! ");
+    }
+};
+
+// Only and only button click for city input
+inputuserform.addEventListener("submit", userinputclick);
+
+// previous searched city
+var previousdisplayedcityclick = function (event) {
+    var clickCity = event.currentTarget.textContent;
+    getCityWeathertoday(clickCity);
+    fivedayforecast(clickCity);
+};
